@@ -43,9 +43,9 @@ def main():
                        ord('J'),
                        ord('K'), ord('L'), ord('M'), ord('N'), ord('O'), ord('P'), ord('Q'), ord('R'), ord('S'),
                        ord('T'),
-                       ord('U'), ord('V'), ord('W'), ord('X'), ord('Y'), ord('Z')]
+                       ord('U'), ord('V'), ord('W'), ord('X'), ord('Y'), ord('Z'), ord(' ')]
 
-    print(int_valid_chars)
+
 
     for npa_contour in npa_contours:
         if cv2.contourArea(npa_contour) > MIN_CONTOUR_AREA:  # if contour is big enough to consider  ??
@@ -63,8 +63,7 @@ def main():
 
             cv2.imshow("char_img", char_img)
             # cv2.imshow("char_img_resized", char_img_resized)
-            cv2.imshow("training_numbers.png",
-                       train_image)  # original img with rectangle
+            cv2.imshow("training_numbers.png",train_image)  # original img with rectangle
 
             int_char = cv2.waitKey(0)  # get key
 
