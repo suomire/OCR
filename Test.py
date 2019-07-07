@@ -39,7 +39,7 @@ def main():
     npa_classifications = npa_classifications.reshape((npa_classifications.size, 1))
     k_nearest = cv2.ml.KNearest_create()
     k_nearest.train(npa_flattened_images, cv2.ml.ROW_SAMPLE, npa_classifications)
-    img_testing_numbers = cv2.imread("hw.png")
+    img_testing_numbers = cv2.imread("knn.png")
 
     if img_testing_numbers is None:
         print("error: image not read from file \n\n")
@@ -100,14 +100,14 @@ def main():
                                                                        k=1)
 
         str_current_char = str(chr(int(npa_results[0][0])))
-        """if i > 0:
+        if i > 0:
             x1 = v_conts[i - 1].int_rect_x + v_conts[i - 1].int_rect_width
-            x2 = v_conts[i].int_rect_x + v_conts[i].int_rect_width
-            print(x2 - x1)
-            print(str_current_char)
-            if (x2 - x1) > 29:
+            x2 = v_conts[i].int_rect_x
+            # print(str_current_char)
+            # print(x2 - x1)
+            if (x2 - x1) > 18:
                 str_final_string = str_final_string + " "
-"""
+
         str_final_string = str_final_string + str_current_char
     print("\n" + str_final_string + "\n")
 
