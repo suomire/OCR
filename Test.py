@@ -39,7 +39,7 @@ def main():
     npa_classifications = npa_classifications.reshape((npa_classifications.size, 1))
     k_nearest = cv2.ml.KNearest_create()
     k_nearest.train(npa_flattened_images, cv2.ml.ROW_SAMPLE, npa_classifications)
-    img_testing_numbers = cv2.imread("knn.png")
+    img_testing_numbers = cv2.imread("images/NUMS.png")
 
     if img_testing_numbers is None:
         print("error: image not read from file \n\n")
@@ -73,8 +73,7 @@ def main():
         if contour_with_data.is_contour_valid():
             v_conts.append(contour_with_data)
 
-    v_conts.sort(key=operator.attrgetter("int_rect_x"))  # ???
-
+    v_conts.sort(key=operator.attrgetter("int_rect_x"))
     str_final_string = ""
 
     #  for contour_with_data in v_conts:
@@ -103,8 +102,6 @@ def main():
         if i > 0:
             x1 = v_conts[i - 1].int_rect_x + v_conts[i - 1].int_rect_width
             x2 = v_conts[i].int_rect_x
-            # print(str_current_char)
-            # print(x2 - x1)
             if (x2 - x1) > 18:
                 str_final_string = str_final_string + " "
 

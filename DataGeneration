@@ -9,7 +9,7 @@ RESIZED_IMAGE_HEIGHT = 30
 
 
 def main():
-    train_image = cv2.imread("training_chars.png")
+    train_image = cv2.imread("images/training_chars.png")
 
     if train_image is None:
         print("error")
