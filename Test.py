@@ -39,7 +39,7 @@ def main():
     npa_classifications = npa_classifications.reshape((npa_classifications.size, 1))
     k_nearest = cv2.ml.KNearest_create()
     k_nearest.train(npa_flattened_images, cv2.ml.ROW_SAMPLE, npa_classifications)
-    img_testing_numbers = cv2.imread("images/NUMS.png")
+    img_testing_numbers = cv2.imread("images/hw.png")
 
     if img_testing_numbers is None:
         print("error: image not read from file \n\n")
